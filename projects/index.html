@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dheeran's Website - Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'VT323', monospace;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background-color: #000;
+            border: 1px solid rgba(113, 128, 150, 0.5);
+            border-radius: 0;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.25rem;
+            text-transform: lowercase;
+            transition: all 0.2s ease-out;
+            position: relative;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .action-button:hover {
+            background-color: #1a1a1a;
+            transform: scale(0.98);
+        }
+
+        .action-button .gif-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.2;
+        }
+
+        .action-button span,
+        .action-button svg {
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-section {
+            margin-bottom: 2rem;
+        }
+
+        .message-area {
+            text-align: center;
+            width: 100%;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-container">
+        <h1 class="text-5xl md:text-6xl lowercase mb-6">Projects</h1>
+
+        <div class="project-section">
+            <h2 class="text-3xl lowercase mb-2">StemRacing @teamblackwing (formerly) Graphics and CAD</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-4">
+                I was an important role in building the identity for @teamblackwing throughout the socials and our
+                portfolios. This involved making the
+                team's graphics, developing the team name, and designing the logo that represented
+                the team. My work was foundation for the team's sleek image. Despite the contributions I
+                made, I was removed from the team.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2 class="text-3xl lowercase mb-2">StemRacing @airborne.f1 Graphics and CAD</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-4">
+                Currently, I'm with @airborne.f1, focusing on developing their team identity through
+                graphics and my improved CAD designs along with the development of our car.
+            </p>
+            <div class="flex flex-wrap gap-4 mt-4">
+                <a href="https://www.instagram.com/airborne.f1/" target="_blank" class="action-button">
+                    <img src="https://i.pinimg.com/originals/54/c1/96/54c1963eaebc2c5f9d7632f07093b34f.gif"
+                        alt="Animated Background" class="gif-background" />
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75v.5a1.25 1.25 0 0 1-2.5 0v-.5a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z" />
+                    </svg>
+                    Instagram
+                </a>
+            </div>
+        </div>
+
+        <div class="message-area">
+            <h2 class="text-3xl lowercase text-gray-400">More projects soon...</h2>
+            <p class="text-lg md:text-xl text-gray-500 mt-2">I'm constantly working on new things, this website included
+                ;)</p>
+        </div>
+
+        <a href="../" class="action-button">
+            <img src="https://i.pinimg.com/originals/80/eb/15/80eb15b74b0e953de799f32cb26a8c61.gif"
+                alt="Animated Background" class="gif-background" />
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
+                </path>
+            </svg>
+            Back to Home
+        </a>
+    </div>
+</body>
+
+</html>
