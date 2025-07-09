@@ -85,6 +85,43 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
+
+        .vhs-flicker-text {
+            text-shadow: 0.06rem 0 0.06rem #f20000, -0.125rem 0 0.06rem #75fa69;
+            animation-duration: 0.01s;
+            animation-name: textflicker;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            letter-spacing: 2px;
+        }
+
+        @keyframes textflicker {
+            from {
+                text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+            }
+            to {
+                text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+            }
+        }
+
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 1px,
+                rgba(0, 0, 0, 0.2) 1px,
+                rgba(0, 0, 0, 0.2) 2px
+            );
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0.9;
+        }
     </style>
 </head>
 
@@ -93,9 +130,9 @@
 
     <div class="content-wrapper">
         <div class="content-container">
-            <h1 class="text-5xl md:text-6xl lowercase mb-6">Downloads</h1>
+            <h1 class="text-5xl md:text-6xl lowercase mb-6 vhs-flicker-text">Downloads</h1>
 
-            <p class="text-lg md:text-xl text-gray-300 mb-4">
+            <p class="text-lg md:text-xl text-gray-300 mb-4 vhs-flicker-text">
                 Currently, there are no downloads available. I haven't made anything worthy of the public lmao.
             </p>
 
@@ -108,7 +145,7 @@
                         d="M10 19l-7-7m0 0l7-7m-7 7h18">
                     </path>
                 </svg>
-                Back to Home
+                <span class="vhs-flicker-text">Back to Home</span>
             </a>
         </div>
     </div>
