@@ -68,7 +68,6 @@
             z-index: 2;
         }
 
-        /* Fade-in/Fade-out styles */
         #fade-overlay {
             position: fixed;
             top: 0;
@@ -77,16 +76,13 @@
             height: 100%;
             background-color: black;
             opacity: 1;
-            /* Starts fully opaque */
             transition: opacity 0.5s ease-in-out;
             pointer-events: none;
             z-index: 9999;
-            /* Ensure it's on top */
         }
 
         .content-wrapper {
             opacity: 0;
-            /* Starts invisible */
             transition: opacity 0.5s ease-in-out;
         }
     </style>
@@ -130,7 +126,7 @@
             content.style.opacity = 0;
             setTimeout(function () {
                 window.location.href = url;
-            }, 500); // This timeout should match your CSS transition duration
+            }, 500);
         }
     </script>
 </body>

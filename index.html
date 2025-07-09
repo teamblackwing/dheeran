@@ -42,6 +42,10 @@
             .text-tile {
                 min-height: 200px;
             }
+
+            h2 {
+                font-size: 10rem;
+            }
         }
 
         .tile-gif-bg {
@@ -94,37 +98,57 @@
             transition: opacity 0.5s ease-in-out;
         }
     </style>
+
+    <script type="text/javascript">
+        // Only change: Redirect to mobile website if screen width is less than 700 pixels
+        function checkScreenWidthAndRedirect() {
+            if (window.innerWidth < 700) {
+                window.location.href = 'm/'; // Example mobile site URL
+            }
+        }
+
+        // Call the function when the page loads
+        checkScreenWidthAndRedirect();
+    </script>
 </head>
 
 <body class="bg-black text-white">
     <div id="fade-overlay"></div>
 
     <div class="content-wrapper">
-        <div class="tile-grid grid grid-cols-1 md:grid-cols-4 md:grid-rows-4 gap-4 p-4 box-border">
+        <div class="tile-grid grid grid-cols-2 md:grid-cols-4 md:grid-rows-4 gap-4 p-4 box-border">
 
             <div
-                class="tile text-tile bg-black flex flex-col justify-end items-start p-4 md:col-span-2 md:row-span-2 relative overflow-hidden">
-                <h2 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl mb-2 lowercase z-10" style="opacity: 0.1;">
+                class="tile text-tile bg-black flex flex-col justify-end items-start p-4 col-span-2 md:col-span-2 md:row-span-2 relative overflow-hidden">
+                <!-- MODIFIED: Increased font sizes for h2 elements to better fill the width -->
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-2 lowercase z-10"
+                    style="opacity: 0.1;">
                     Dheeran's Website
                 </h2>
-                <h2 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl mb-2 lowercase z-10" style="opacity: 0.1;">
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-2 lowercase z-10"
+                    style="opacity: 0.1;">
                     Dheeran's Website
                 </h2>
-                <h2 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl mb-2 lowercase z-10" style="opacity: 0.1;">
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-2 lowercase z-10"
+                    style="opacity: 0.1;">
                     Dheeran's Website
                 </h2>
-                <h2 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl mb-2 lowercase z-10" style="opacity: 0.25;">
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-2 lowercase z-10"
+                    style="opacity: 0.25;">
                     Dheeran's
                     Website
                 </h2>
-                <h2 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl mb-2 lowercase z-10" style="opacity: 0.5;">
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-2 lowercase z-10"
+                    style="opacity: 0.5;">
                     Dheeran's Website
                 </h2>
-                <h2 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl mb-2 lowercase z-10" style="opacity: 0.75;">
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-2 lowercase z-10"
+                    style="opacity: 0.75;">
                     Dheeran's
                     Website
                 </h2>
-                <h2 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl mb-2 lowercase z-10" style="opacity: 1;">
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-2 lowercase z-10"
+                    style="opacity: 1;">
                     Dheeran's Website
                 </h2>
 
@@ -161,7 +185,7 @@
             </a>
 
             <a href="#" onclick="fadeOutAndNavigate('/about'); return false;"
-                class="tile bg-gray-900 border border-gray-700 border-opacity-50 text-white no-underline flex flex-col justify-end items-start p-4 relative overflow-hidden transition-all duration-200 ease-out hover:bg-gray-800 hover:scale-[0.98] md:col-span-2 md:row-span-2 tile-gif-bg">
+                class="tile bg-gray-900 border border-gray-700 border-opacity-50 text-white no-underline flex flex-col justify-end items-start p-4 relative overflow-hidden transition-all duration-200 ease-out hover:bg-gray-800 hover:scale-[0.98] col-span-2 md:col-span-2 md:row-span-2 tile-gif-bg">
                 <img src="https://www.premiumbeat.com/blog/wp-content/uploads/2020/04/Vaporwave-and-Synthwave-Free-Pack-Video-Game-Look.gif"
                     alt="Animated Background" class="gif-background" />
                 <span class="text-xl md:text-2xl lowercase z-10">about</span>

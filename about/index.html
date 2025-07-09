@@ -81,7 +81,6 @@
             }
         }
 
-        /* Fade-in/Fade-out styles */
         #fade-overlay {
             position: fixed;
             top: 0;
@@ -90,19 +89,17 @@
             height: 100%;
             background-color: black;
             opacity: 1;
-            /* Starts fully opaque */
             transition: opacity 0.5s ease-in-out;
             pointer-events: none;
             z-index: 9999;
-            /* Ensure it's on top */
         }
 
         .content-wrapper {
             opacity: 0;
-            /* Starts invisible */
             transition: opacity 0.5s ease-in-out;
         }
     </style>
+
 </head>
 
 <body>
@@ -116,8 +113,8 @@
                 Hey, I'm Dheeran, currently based in Dubai.
             </p>
             <p class="text-lg md:text-xl text-gray-300 mb-4">
-                I'm mainly into graphic design and programming, I've recently gotten into the world of **penetration
-                testing**, exploring system vulnerabilities for my own use (nothing illegal though haha)
+                I'm mainly into graphic design and programming, I've recently gotten into the world of penetration
+                testing, exploring system vulnerabilities for my own use (nothing illegal though haha)
             </p>
             <p class="text-lg md:text-xl text-gray-300 mb-4">
                 I also love in automobiles, the engineering and design that goes into them. Cars were probably the best
@@ -174,7 +171,7 @@
             content.style.opacity = 0;
             setTimeout(function () {
                 window.location.href = url;
-            }, 500); // This timeout should match your CSS transition duration
+            }, 500);
         }
     </script>
 </body>

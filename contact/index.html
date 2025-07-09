@@ -12,7 +12,7 @@
         html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            min-height: 100vh;
             font-family: 'VT323', monospace;
             background-color: #000;
             color: #fff;
@@ -76,51 +76,90 @@
                 font-size: 1.25rem;
             }
         }
+
+        #fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .content-wrapper {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
     </style>
 </head>
 
 <body>
-    <div class="content-container">
-        <h1 class="text-5xl md:text-6xl lowercase mb-6">Contact Dheeran</h1>
+    <div id="fade-overlay"></div>
 
-        <p class="text-lg md:text-xl text-gray-300 mb-4">
-            Feel free to reach out through any of the platforms below. I'm probably active haha
-        </p>
+    <div class="content-wrapper">
+        <div class="content-container">
+            <h1 class="text-5xl md:text-6xl lowercase mb-6">Contact Dheeran</h1>
 
-        <div class="flex flex-wrap gap-4 mt-8">
-            <a href="../" class="action-button">
-                <img src="https://i.pinimg.com/originals/80/eb/15/80eb15b74b0e953de799f32cb26a8c61.gif"
-                    alt="Animated Background" class="gif-background" />
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-                Back
-            </a>
-            <a href="https://github.com/dheerankc" target="_blank" class="action-button">
-                <img src="https://i.pinimg.com/originals/54/c1/96/54c1963eaebc2c5f9d7632f07093b34f.gif"
-                    alt="Animated Background" class="gif-background" />
-                Github
-            </a>
-            <a href="imagine_trying.html" class="action-button">
-                <img src="https://i.pinimg.com/originals/03/64/bc/0364bcac79f1fe22bdad755d137cb5cf.gif"
-                    alt="Animated Background" class="gif-background" />
-                Phone
-            </a>
-            <a href="https://www.youtube.com/channel/UCVrGFB_zMCA5Y1qOOtwGRhw?sub_confirmation=1" target="_blank"
-                class="action-button">
-                <img src="https://www.premiumbeat.com/blog/wp-content/uploads/2020/04/Vaporwave-and-Synthwave-Free-Pack-Video-Game-Look.gif"
-                    alt="Animated Background" class="gif-background" />
-                Youtube
-            </a>
-            <a href="https://discordapp.com/users/652490335578226709" target="_blank" class="action-button">
-                <img src="https://64.media.tumblr.com/8ab059228a9cf657db5455f5b1b29327/6f238f65909558d8-67/s540x810/86db62981113cb8cf8f79972de0918ef66aa8204.gif"
-                    alt="Animated Background" class="gif-background" />
-                Discord
-            </a>
+            <p class="text-lg md:text-xl text-gray-300 mb-4">
+                Feel free to reach out through any of the platforms below. I'm probably active haha
+            </p>
+
+            <div class="flex flex-wrap gap-4 mt-8">
+                <a href="../" class="action-button">
+                    <img src="https://i.pinimg.com/originals/80/eb/15/80eb15b74b0e953de799f32cb26a8c61.gif"
+                        alt="Animated Background" class="gif-background" />
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back
+                </a>
+                <a href="https://github.com/dheerankc" target="_blank" class="action-button">
+                    <img src="https://i.pinimg.com/originals/54/c1/96/54c1963eaebc2c5f9d7632f07093b34f.gif"
+                        alt="Animated Background" class="gif-background" />
+                    Github
+                </a>
+                <a href="imagine_trying.html" class="action-button">
+                    <img src="https://i.pinimg.com/originals/03/64/bc/0364bcac79f1fe22bdad755d137cb5cf.gif"
+                        alt="Animated Background" class="gif-background" />
+                    Phone
+                </a>
+                <a href="https://www.youtube.com/channel/UCVrGFB_zMCA5Y1qOOtwGRhw?sub_confirmation=1" target="_blank"
+                    class="action-button">
+                    <img src="https://www.premiumbeat.com/blog/wp-content/uploads/2020/04/Vaporwave-and-Synthwave-Free-Pack-Video-Game-Look.gif"
+                        alt="Animated Background" class="gif-background" />
+                    Youtube
+                </a>
+                <a href="https://discordapp.com/users/652490335578226709" target="_blank" class="action-button">
+                    <img src="https://64.media.tumblr.com/8ab059228a9cf657db5455f5b1b29327/6f238f65909558d8-67/s540x810/86db62981113cb8cf8f79972de0918ef66aa8204.gif"
+                        alt="Animated Background" class="gif-background" />
+                    Discord
+                </a>
+            </div>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            document.getElementById('fade-overlay').style.opacity = 0;
+            document.querySelector('.content-wrapper').style.opacity = 1;
+        });
+
+        function fadeOutAndNavigate(url) {
+            let overlay = document.getElementById('fade-overlay');
+            overlay.style.opacity = 1;
+            let content = document.querySelector('.content-wrapper');
+            content.style.opacity = 0;
+            setTimeout(function () {
+                window.location.href = url;
+            }, 500);
+        }
+    </script>
 </body>
 
 </html>
