@@ -51,6 +51,10 @@
             transform: scale(0.98);
         }
 
+        .back-to-home-button {
+            font-weight: 600;
+        }
+
         .action-button .gif-background {
             position: absolute;
             top: 0;
@@ -77,16 +81,55 @@
             width: 100%;
             padding: 2rem 0;
         }
+
+        /* VHS Text Flicker Effect */
+        .vhs-flicker-text {
+            text-shadow: 0.06rem 0 0.06rem #f20000, -0.125rem 0 0.06rem #75fa69;
+            animation-duration: 0.01s;
+            animation-name: textflicker;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            letter-spacing: 2px;
+        }
+
+        @keyframes textflicker {
+            from {
+                text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+            }
+            to {
+                text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+            }
+        }
+
+        /* CRT Line Effect for Action Button */
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 1px,
+                rgba(0, 0, 0, 0.2) 1px,
+                rgba(0, 0, 0, 0.2) 2px
+            );
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0.9;
+        }
     </style>
 </head>
 
 <body>
     <div class="content-container">
-        <h1 class="text-5xl md:text-6xl lowercase mb-6">Projects</h1>
+        <h1 class="text-5xl md:text-6xl lowercase mb-6 vhs-flicker-text">Projects</h1>
 
         <div class="project-section">
-            <h2 class="text-3xl lowercase mb-2">StemRacing @teamblackwing (formerly) Graphics and CAD</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-4">
+            <h2 class="text-3xl lowercase mb-2 vhs-flicker-text">StemRacing @teamblackwing (formerly) Graphics and CAD</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-4 vhs-flicker-text">
                 I was an important role in building the identity for @teamblackwing throughout the socials and our
                 portfolios. This involved making the
                 team's graphics, developing the team name, and designing the logo that represented
@@ -96,31 +139,17 @@
         </div>
 
         <div class="project-section">
-            <h2 class="text-3xl lowercase mb-2">StemRacing @airborne.f1 Graphics and CAD</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-4">
+            <h2 class="text-3xl lowercase mb-2 vhs-flicker-text">StemRacing @airborne.f1 Graphics and CAD</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-4 vhs-flicker-text">
                 Currently, I'm with @airborne.f1, focusing on developing their team identity through
                 graphics and my improved CAD designs along with the development of our car.
             </p>
-            <div class="flex flex-wrap gap-4 mt-4">
-                <a href="https://www.instagram.com/airborne.f1/" target="_blank" class="action-button">
-                    <img src="https://i.pinimg.com/originals/54/c1/96/54c1963eaebc2c5f9d7632f07093b34f.gif"
-                        alt="Animated Background" class="gif-background" />
-                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75v.5a1.25 1.25 0 0 1-2.5 0v-.5a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z" />
-                    </svg>
-                    Instagram
-                </a>
-            </div>
         </div>
-
         <div class="message-area">
-            <h2 class="text-3xl lowercase text-gray-400">More projects soon...</h2>
-            <p class="text-lg md:text-xl text-gray-500 mt-2">I'm constantly working on new things, this website included
+            <h2 class="text-3xl lowercase text-gray-400 vhs-flicker-text">More projects soon...</h2>
+            <p class="text-lg md:text-xl text-gray-500 mt-2 vhs-flicker-text">I'm constantly working on new things, this website included
                 ;)</p>
         </div>
-
         <a href="../" class="action-button">
             <img src="https://i.pinimg.com/originals/80/eb/15/80eb15b74b0e953de799f32cb26a8c61.gif"
                 alt="Animated Background" class="gif-background" />
@@ -129,7 +158,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
                 </path>
             </svg>
-            Back to Home
+            <span class="vhs-flicker-text">Back to Home</span>
         </a>
     </div>
 </body>
