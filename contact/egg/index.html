@@ -116,6 +116,45 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* VHS Text Flicker Effect */
+        .vhs-flicker-text {
+            text-shadow: 0.06rem 0 0.06rem #f20000, -0.125rem 0 0.06rem #75fa69;
+            animation-duration: 0.01s;
+            animation-name: textflicker;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            letter-spacing: 2px;
+        }
+
+        @keyframes textflicker {
+            from {
+                text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+            }
+            to {
+                text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+            }
+        }
+
+        /* CRT Line Effect for Action Button */
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 1px,
+                rgba(0, 0, 0, 0.2) 1px,
+                rgba(0, 0, 0, 0.2) 2px
+            );
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0.9;
+        }
     </style>
 </head>
 
@@ -125,24 +164,24 @@
     <div class="content-wrapper">
         <div class="content-container">
             <h1 class="lowercase mb-6">
-                <span class="text-lg md:text-xl typewriter-text" id="ip-intro-text"></span><br>
-                <span class="text-7xl sm:text-8xl md:text-9xl font-bold text-yellow-400 typewriter-text" id="ip-display-text"></span><span class="typewriter-cursor" id="ip-cursor"></span>
+                <span class="text-lg md:text-xl typewriter-text vhs-flicker-text" id="ip-intro-text"></span><br>
+                <span class="text-7xl sm:text-8xl md:text-9xl font-bold text-yellow-400 typewriter-text vhs-flicker-text" id="ip-display-text"></span><span class="typewriter-cursor" id="ip-cursor"></span>
             </h1>
 
             <p class="text-lg md:text-xl text-gray-300 mb-4">
-                <span class="typewriter-text" id="typewriter-message"></span>
+                <span class="typewriter-text vhs-flicker-text" id="typewriter-message"></span>
             </p>
 
-            <div id="user-message-box" class="message-box text-sm md:text-base text-gray-200"></div>
+            <div id="user-message-box" class="message-box text-sm md:text-base text-gray-200 vhs-flicker-text"></div>
 
-            <a href="#" onclick="handleBackButtonClick('../'); return false;" class="action-button">
+            <a href="#" onclick="handleBackButtonClick('/index.html'); return false;" class="action-button">
                 <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M10 19l-7-7m0 0l7-7m-7 7h18">
                     </path>
                 </svg>
-                Back to Home
+                <span class="vhs-flicker-text">Back to Home</span>
             </a>
         </div>
     </div>
